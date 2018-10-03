@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Code Match</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="favicon icon" href="assets/images/favicon.png" />
+    <!------Google Fonts--->
+        <link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!------CSS--->
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!--JavaScript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/assets/js/match.js"></script>
+</head>
+<body>
+    <script>
+
+        var loginId = readCookie("userName");
+
+        // var loginId = "jpeek1";
+
+        function readCookie(userName) {
+            var nameEQ = userName + "=";
+            var ca = document.cookie.split(";");
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === " ") c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) {
+                    return c.substring(nameEQ.length, c.length);
+                }
+            }
+            return null;
+        }
+
+        $.get("/api/student/login_id/" + loginId , function(data) {
+        }).then(function(dbStudent) {
+            console.log(dbStudent);
+            $('#studentName').text(dbStudent.user_name)
+            $('#studentLoginId').text(dbStudent.login_id)
+            var studentResponses = dbStudent.responses.split(",");
+            console.log(studentResponses);
+            matchTutor(studentResponses);
+        });
+
+        function matchTutor(studentResponses) {
+            $.get("/api/students/false", function(data) {
+            }).then(function(dbTutors) {
+                var tutors = [];
+
+                console.log(dbTutors);
+
+                for (let i = 0; i < dbTutors.length; i++) {
+                    var tutorRespones = dbTutors[i].responses;
+                    tutors[i] = tutorRespones.split(",");
+                }
+
+                console.log(tutors);
+
+                var match = 0;
+                var currentDifference = 0;
+                var previousDifference = 0;
+
+                for(let i = 0; i < tutors.length; i++){
+                    currentDifference = 0;
+                    for(let j=0; j < studentResponses.length; j++){
+                        currentDifference += (Math.abs(parseInt(tutors[i][j]) - parseInt(studentResponses[j])));
+                    }
+
+                    if ((currentDifference <= previousDifference) || (previousDifference === 0 && i === 0)) {
+                        previousDifference = currentDifference;
+                        currentDifference = 0;
+                        match = i;
+                    }
+                }
+                    $('#tutorName').text(dbTutors[match].user_name)
+            });
+        }
+
+    </script>
+<!-----------Navbar---------------->
+    <nav>
+        <div class="nav-wrapper grey darken-3">
+        <!-- <a href="/" class="brand-logo"><img src="assets/images/code_match_logo_web_100_height.png" alt="Code.Match Logo"></a> -->
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li><a class="menu" href="/">Home</a></li>
+				<li class="active"><a class="menu" href="/about-us">About Us</a></li>
+				<li><a class="menu" href="/tutor">Become A Tutor</a></li>
+                <li><a class="menu" href="/login">Login</a></li>
+                <li><a class="menu" href="/signup">Sign Up</a></li>
+			</ul>
+		</div>
+    </nav> 
+    <div class="container">
+        <div class="row">
+                <div class="col s12 center-align homeColumn">
+                <h4 id="studentName"></h4>
+                <h4 id="studentLoginId"></h4>
+                <h4>Your matching tutor is:</h4>
+                <h4 id="tutorName"></h4>
+                <h5 id="tutorContact"></h5>
+            </div> <!--End Col -->
+        </div><!--End row -->
+    
+    </div> <!--End container -->
+</body>
+</html>

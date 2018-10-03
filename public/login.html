@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Code Match</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="favicon icon" href="assets/images/favicon.png" />
+<!------Google Fonts--->
+	<link href="https://fonts.googleapis.com/css?family=Chakra+Petch" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!------CSS--->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+<!--JavaScript-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="/assets/js/match.js"></script>
+</head>
+<body>
+	<nav>
+        <div class="nav-wrapper grey darken-3">
+        <!-- <a href="/" class="brand-logo"><img src="assets/images/code_match_logo_web_100_height.png" alt="Code.Match Logo"></a> -->
+			<ul id="nav-mobile" class="left hide-on-med-and-down">
+				<li><a class="menu" href="/">Home</a></li>
+				<li><a class="menu" href="/about-us">About Us</a></li>
+				<li><a class="menu" href="/tutor">Become A Tutor</a></li>
+                <li class="active"><a class="menu" href="/login">Login</a></li>
+                <li><a class="menu" href="/signup">Sign Up</a></li>
+			</ul>
+		</div>
+	</nav> 
+	<div class="container">
+		<main role="main">
+			<h2>Login</h2>
+			<form>
+				<div class="icon-container margin5">
+					<input type="email" id="email" placeholder="email...">
+					<div class="error-icon js-hidden" id="email-icon" name="alert"></div>
+				</div>
+				<div class="icon-container margin5">
+					<input type="password" id="password" placeholder="password...">
+					<div class="error-icon js-hidden" id="password-icon" name="alert"></div>
+				</div>
+				<button type="submit" id="login-btn" class="button">Login</button>
+				<br><br>
+				<p>
+					Need to create an account? <a href="/signup">Sign Up</a>
+					<br>
+					Forgot your password? <a href="/passwordreset">Reset it</a>
+				</p>
+			</form>
+			<div id="errors-display"></div>
+		</main>
+	</div>
+
+<!-- jQuery -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script> -->
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script src="/assets/js/firebase.js"></script>
+<!-- login.js -->
+<!-- <script src="login.js"></script> -->
+<!-- auth.js -->
+<!-- <script src="auth.js"></script> -->
+</body>
+</html>

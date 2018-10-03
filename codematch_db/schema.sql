@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS codematch;
+CREATE DATABASE codematch;

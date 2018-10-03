@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>List All Persons</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="main.js"></script> -->
+<script>
+    $(document).ready(function() {
+        var userList = $("tbody");
+
+        getUsers();
+
+        function createUserRow(userData) {
+            console.log(userData);
+            var newTr = $("<tr>");
+            newTr.data("user", userData);
+            newTr.append("<td> " + userData.user_name + "</td>");
+            newTr.append("<td> " + userData.login_id + "</td>");
+            newTr.append("<td> " + userData.responses + "</td>");
+            newTr.append("<td> " + userData.is_student + "</td>");
+            return newTr;
+        }
+
+        function getUsers() {
+            $.get("/api/users", function(data) {
+                var rowsToAdd = [];
+                for (var i = 0; i < data.length; i++) {
+                    rowsToAdd.push(createUserRow(data[i]));
+                }
+                renderUserList(rowsToAdd);
+            });
+        }
+
+        function renderUserList(rows) {
+            if (rows.length) {
+                console.log(rows);
+                userList.prepend(rows);
+            }
+        }
+
+    });
+
+</script>
+</head>
+<body>
+    <h1>List All Persons</h1>
+    <ul>
+        <li><a href="/">Back</a></li>
+    </ul>
+    <div class="user-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Login Id</th>
+                    <th>Responses</th>
+                    <th>Is Student</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+/*
+{
+margin: 0;
+padding: 0;
+height: 100%;
+background-color: #e8e8e8;
+}
+*/
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #e8e8e8;
+}
+
+.img-container {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/background.jpg");
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/*** Laptop Text and CTA Button***/
+
+/* .inner-container {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 35%;
+    left: 38%;
+    color: white;
+    transform: translate(-50%, -50%);
+} */
+
+#laptopText {
+    position: relative;
+    right: 25%;
+    display: block;
+    font-family: 'Chakra Petch', monospace;
+    font-size: 4em;
+    color: #DCDCDC;
+    text-align: center;
+}
+
+.homeColumn {
+    height: 100%;
+    transform: translate(-5%, 110%);
+}
+
+#tagline {
+    font-size: 2em;
+    color: #DCDCDC
+}
+
+#salesPitch {
+    color: #DCDCDC
+}
+
+
+/* h1 {
+    font-size: 7.0 em;
+    font-family: 'VT323', monospace;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+} */
+
+.menu a {
+    margin-top: 20px;
+    font-size: 1.3em;
+    font-family: sans-serif;
+    color: #ffffff
+}
+
+nav ul li:hover {
+    background-color: grey;
+ }
+
+nav ul li.active {
+    background-color: grey;
+ }
+
+/* 
+.menu a:link {color: #ffffff;}
+.menu a:visited {color: #ffffff;}
+.menu a:hover {color: #01579b;}
+.menu a:active {color: #01579b;} */
+
+
+/***CTA BUTTON ****/
+.button {
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+    color: whitesmoke;
+    border: 4px solid;
+    text-align: center;
+    outline: none;
+    margin-top: 300px;
+    position: absolute;
+    margin-left: 510px;
+    transition: background-color 0.2 ease-out;
+    height:8%;
+}
+
+.button:hover, .button:active{
+    background-color: #ffffff;
+    color: gray;
+}
+
+/************* NAV BAR ****************/
+
+#nav {
+    background-color: black;
+    height: 50px;
+    transition: 0.8s all;
+}
+
+.about {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    outline: none;
+    height: 10%;
+    left: 100px;
+    text-decoration: none; 
+}
+
+.bTutor {
+    display: inline-block;
+    padding: px;
+    font-weight: bold;
+    color: whitesmoke;
+    text-align: center;
+    outline: none;
+    height: 8%;
+    left: 150px;
+
+}
+
+.login {
+        margin-top: 10px;
+        display: inline-block;
+        padding: 10px;
+        font-weight: bold;
+        color: whitesmoke;
+        text-align: center;
+        outline: none;
+        height: 10%;
+        left: 100px;
+        text-decoration: none;
+}
+/********************SURVEY.HTML STYLING******************************/
+#add-ons {
+    background-repeat: repeat;
+}
+
+#text {
+    text-align: center;
+}
+/********************Atomic Styling******************************/
+
+.margin5 {
+    margin: 5px;
+}
+
+.marginTopBottom10 {
+    margin: 10px 10px;
+}
+.marginTopBottom20 {
+    margin: 20px 20px;
+}
+
+.borderOrange {
+    border: 1px solid orangered;
+}
