@@ -4,7 +4,6 @@
       
 Code.Match is a web app that connects tutors and students based off of their Web Development and coding skills. Code.Match allows the user to create an account, answer a few questions to get an idea of what their learning needs and goals are. The student will instantly be matched to a uniquely handpicked professional so they may begin learning immediately, thus stepping up their coding game. 
 
-
 ## Technologies
 We built Code.Match with the following technologies:
 •	Node.js
@@ -34,3 +33,8 @@ We built Code.Match with the following technologies:
 •	Peter Jarrard
 •	Teresa Maher
 •	Shay Banks 
+
+
+## View The App
+
+https://enigmatic-plateau-41126.herokuapp.com/
