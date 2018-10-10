@@ -37,4 +37,4 @@ We built Code.Match with the following technologies:
 
 ## View The App
 
-https://enigmatic-plateau-41126.herokuapp.com/
+https://codematch.herokuapp.com/
