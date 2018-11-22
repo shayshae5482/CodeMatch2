@@ -6,26 +6,26 @@ Code.Match is a web app that connects tutors and students based off of their Web
 
 ## Technologies Used
 
-•	Node.js
-•	Express
-•	MySQL
-•	Bootstrap
-•	Materialize
-+  Sequelize
-•	CSS
-•	HTML5
+* Node.js
+* Express
+* MySQL
+* Bootstrap
+* Materialize
+* Sequelize
+* CSS
+* HTML5
 
 ## Future Enhancements
-•	geolocation
-+ calendar integration showing available tutors
-•	customizable profiles
-•	tutor reviews
-•	chat
+* geolocation
+* calendar integration showing available tutors
+* customizable profiles
+* tutor reviews
+* chat
 
 ## Growing Pains
-•	Implementing and using new technology 
-•	It was important to focus on what could be developed within the time frame we were allocated. We had big dreams and idea’s, but deciding  what should be prioritized and implemented and parking other ideas for future enhancements.
-•	Learning new technology and getting famailiar with it and using it effectively, such as defect testing.
+* Implementing and using new technology 
+* It was important to focus on what could be developed within the time frame we were allocated. We had big dreams and idea’s, but deciding  what should be prioritized and implemented and parking other ideas for future enhancements.
+* Learning new technology and getting familiar with it and using it effectively, such as defect testing.
 
 
 ## The Crew 
